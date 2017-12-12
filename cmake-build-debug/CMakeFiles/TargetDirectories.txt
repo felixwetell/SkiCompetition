@@ -1,0 +1,3 @@
+/Users/felix/Documents/Development/C/SkiCompetition/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/felix/Documents/Development/C/SkiCompetition/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/felix/Documents/Development/C/SkiCompetition/cmake-build-debug/CMakeFiles/testing.dir
