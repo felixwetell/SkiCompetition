@@ -10,33 +10,85 @@ struct Skier {
 
 };
 
+int addParticipant (int number) {
+    struct Skier participant;
+    printf("::::  Anmälan till 30km  ::::\n");
+
+    /*
+    participant.id = number;
+
+    printf("        Förnamn  : ");
+    scanf("%c\n", &participant.firstName);
+
+    printf("        Efternam : ");
+    scanf("%c\n", &participant.lastName);
+
+    printf("        Klubb    : ");
+    scanf("%c\n", &participant.club);
+    */
+    
+    printf("\n");
+    return 0;
+}
+
 int main () {
 
-    int input;
-    int distance = 30000, participants = 42;
+    int input, addSkier;
+    int distance = 30000, participants = 0;
 
     do {
         printf(":::::::::::::::::::::\n");
         printf(":::  SKIDTÄVLING  :::\n");
         printf("1. Nollställ för en ny tävling\n");
-        printf("2. Registera åkare\n");
+        printf("2. Registera deltagare\n");
         printf("3. Lotta startordning\n");
         printf("4. Registera åktider\n");
         printf("5. Visa osorterade resultat\n");
         printf("6. Visa sorterade resultat\n");
         printf("0. Avsluta program\n");
-        printf("\n");
-        printf("Välj val: ");
+        printf("\nVälj val: ");
         scanf("%i", &input);
         printf("\n");
+
 
         switch (input) {
 
             case 1:
-                
+
                 break;
 
             case 2:
+                do {
+                    printf("::::::::::::::::::::\n");
+                    printf("::: Registrering :::\n");
+                    printf("1. Ny åkare\n");
+                    printf("0. Avsluta registrering\n");
+                    printf("\nVälj val: ");
+                    scanf("%i", &addSkier);
+                    printf("\n");
+
+                    switch (addSkier) {
+                        case 1:
+
+                            if (participants <= 43 ){
+                                participants += 1;
+                                addParticipant(participants);
+                            }
+
+                            else {
+                                printf("Maximalt antal deltagare registrerade");
+                            }
+                            break;
+
+                        case 0:
+                            printf("Avslutar registrering...");
+                            break;
+
+                        default:
+                            break;
+                    }
+
+                } while(addSkier != 0);
 
                 break;
 
@@ -64,21 +116,6 @@ int main () {
         }
 
     }while (input != 0);
-
-    struct Skier participant;
-
-    printf("::::    ANMÄLAN TILL 30KM    ::::\n");
-
-    participant.id = 1;
-
-    printf("        Förnamn  : ");
-    scanf("%c\n", &participant.firstName);
-
-    printf("        Efternam : ");
-    scanf("%c\n", &participant.lastName);
-
-    printf("        Klubb    : ");
-    scanf("%c\n", &participant.club);
 
     /*
      FILE *fp;
