@@ -1,6 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+
+FILE *fp;
+
 struct Skier {
 
     int id;
@@ -12,8 +15,7 @@ struct Skier {
 
 int addParticipant (int number) {
 
-    FILE *fp;
-    fp = fopen("STARTFIL.DAT", "w+");
+    fp = fopen("STARTFIL.txt", "r+");
 
     struct Skier participant;
     printf("::::  Anmälan till 30km  ::::\n");
@@ -28,7 +30,7 @@ int addParticipant (int number) {
     printf("      Klubb    : ");
     scanf("%s", &participant.club);
 
-    fprintf(fp, "%i:%s:%s:%s", participant.id, participant.firstName, participant.lastName, participant.club);
+    fprintf(fp, "%i:%s:%s:%s\n", participant.id, participant.firstName, participant.lastName, participant.club);
     printf("\n");
 
     fclose(fp);
