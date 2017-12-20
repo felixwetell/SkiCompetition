@@ -11,9 +11,12 @@ struct Skier {
 };
 
 int addParticipant (int number) {
+
+    FILE *fp;
+    fp = fopen("STARTFIL.DAT", "w+");
+
     struct Skier participant;
     printf("::::  Anmälan till 30km  ::::\n");
-
     participant.id = number;
 
     printf("      Förnamn  : ");
@@ -25,7 +28,10 @@ int addParticipant (int number) {
     printf("      Klubb    : ");
     scanf("%s", &participant.club);
 
+    fprintf(fp, "%i:%s:%s:%s", participant.id, participant.firstName, participant.lastName, participant.club);
     printf("\n");
+
+    fclose(fp);
     return 0;
 }
 
@@ -44,6 +50,7 @@ int main () {
         printf("5. Visa osorterade resultat\n");
         printf("6. Visa sorterade resultat\n");
         printf("0. Avsluta program\n");
+
         printf("\nVälj val: ");
         scanf("%i", &input);
         printf("\n");
@@ -61,13 +68,13 @@ int main () {
                     printf("::: Registrering :::\n");
                     printf("1. Ny åkare\n");
                     printf("0. Avsluta registrering\n");
+
                     printf("\nVälj val: ");
                     scanf("%i", &addSkier);
                     printf("\n");
 
                     switch (addSkier) {
                         case 1:
-
                             if (participants < maxParticipants ){
                                 participants += 1;
                                 addParticipant(participants);
@@ -114,6 +121,6 @@ int main () {
         }
 
     }while (input != 0);
-    
+
     return 0;
 }
