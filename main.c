@@ -17,7 +17,7 @@ struct Skier {
 
 int addParticipant (int number) {
 
-    fp = fopen("STARTFIL.txt", "w");
+    fp = fopen("ANMALAN.txt", "w");
 
     struct Skier participant;
     printf("::::  Anmälan till 30km  ::::\n");
@@ -64,8 +64,12 @@ int main () {
 
         switch (input) {
             case 1:
+                fp = fopen("ANMALAN.txt", "w");
+                fclose(fp);
+
                 fp = fopen("STARTFIL.txt", "w");
                 fclose(fp);
+
                 printf("::::::::::::::::::::::::\n");
                 printf(":::  Listor rensade  :::\n");
                 printf("::::::::::::::::::::::::\n");
