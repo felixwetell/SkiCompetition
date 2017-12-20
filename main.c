@@ -14,19 +14,17 @@ int addParticipant (int number) {
     struct Skier participant;
     printf("::::  Anmälan till 30km  ::::\n");
 
-    /*
     participant.id = number;
 
-    printf("        Förnamn  : ");
-    scanf("%c\n", &participant.firstName);
+    printf("      Förnamn  : ");
+    scanf("%s", &participant.firstName);
 
-    printf("        Efternam : ");
-    scanf("%c\n", &participant.lastName);
+    printf("      Efternam : ");
+    scanf("%s", &participant.lastName);
 
-    printf("        Klubb    : ");
-    scanf("%c\n", &participant.club);
-    */
-    
+    printf("      Klubb    : ");
+    scanf("%s", &participant.club);
+
     printf("\n");
     return 0;
 }
@@ -34,7 +32,7 @@ int addParticipant (int number) {
 int main () {
 
     int input, addSkier;
-    int distance = 30000, participants = 0;
+    int distance = 30000, participants = 0, maxParticipants = 42;
 
     do {
         printf(":::::::::::::::::::::\n");
@@ -70,7 +68,7 @@ int main () {
                     switch (addSkier) {
                         case 1:
 
-                            if (participants <= 43 ){
+                            if (participants < maxParticipants ){
                                 participants += 1;
                                 addParticipant(participants);
                             }
@@ -116,15 +114,6 @@ int main () {
         }
 
     }while (input != 0);
-
-    /*
-     FILE *fp;
-
-    fp = fopen("test.txt", "w+");
-    fprintf(fp, "This is testing for fprintf...\n");
-    fputs("This is testing for fputs...\n", fp);
-    fclose(fp);
-     */
-
+    
     return 0;
 }
