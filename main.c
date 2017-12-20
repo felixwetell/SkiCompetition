@@ -1,5 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <unistd.h>
+#include <time.h>
 
 
 FILE *fp;
@@ -15,7 +17,7 @@ struct Skier {
 
 int addParticipant (int number) {
 
-    fp = fopen("STARTFIL.txt", "r+");
+    fp = fopen("STARTFIL.txt", "w");
 
     struct Skier participant;
     printf("::::  Anmälan till 30km  ::::\n");
@@ -43,6 +45,7 @@ int main () {
     int distance = 30000, participants = 0, maxParticipants = 42;
 
     do {
+        printf("\n");
         printf(":::::::::::::::::::::\n");
         printf(":::  SKIDTÄVLING  :::\n");
         printf("1. Nollställ för en ny tävling\n");
@@ -57,11 +60,15 @@ int main () {
         scanf("%i", &input);
         printf("\n");
 
+        usleep(500*1000);
 
         switch (input) {
-
             case 1:
-
+                fp = fopen("STARTFIL.txt", "w");
+                fclose(fp);
+                printf("::::::::::::::::::::::::\n");
+                printf(":::  Listor rensade  :::\n");
+                printf("::::::::::::::::::::::::\n");
                 break;
 
             case 2:
@@ -95,6 +102,7 @@ int main () {
                             break;
                     }
 
+                    sleep(1);
                 } while(participantInput != 0);
 
                 break;
@@ -121,8 +129,8 @@ int main () {
             default:
                 break;
         }
-
-    }while (input != 0);
+        usleep(1000*1000);
+    } while (input != 0);
 
     return 0;
 }
