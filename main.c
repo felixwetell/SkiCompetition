@@ -37,7 +37,7 @@ int addParticipant (int number) {
 
 int main () {
 
-    int input, addSkier;
+    int input, participantInput;
     int distance = 30000, participants = 0, maxParticipants = 42;
 
     do {
@@ -70,10 +70,10 @@ int main () {
                     printf("0. Avsluta registrering\n");
 
                     printf("\nVälj val: ");
-                    scanf("%i", &addSkier);
+                    scanf("%i", &participantInput);
                     printf("\n");
 
-                    switch (addSkier) {
+                    switch (participantInput) {
                         case 1:
                             if (participants < maxParticipants ){
                                 participants += 1;
@@ -93,7 +93,7 @@ int main () {
                             break;
                     }
 
-                } while(addSkier != 0);
+                } while(participantInput != 0);
 
                 break;
 
