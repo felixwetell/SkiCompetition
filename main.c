@@ -17,7 +17,7 @@ struct Skier {
 
 int addParticipant (int number) {
 
-    fp = fopen("ANMALAN.txt", "w");
+    fp = fopen("ANMALAN.txt", "a");
 
     struct Skier participant;
     printf("::::  Anmälan till 30km  ::::\n");
